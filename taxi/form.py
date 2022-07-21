@@ -51,3 +51,14 @@ class CarForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = "__all__"
+
+
+class CarSearchForm(forms.Form):
+    model = forms.CharField(
+        max_length=200,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"placeholder": "Search by model.."}
+        )
+    )
