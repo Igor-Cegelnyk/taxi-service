@@ -24,8 +24,8 @@ class PrivateManufacturerTest(TestCase):
 
         for manufacturer_num in range(1, 7):
             Manufacturer.objects.create(
-                name='Test %s' % manufacturer_num,
-                country='Test country %s' % manufacturer_num,
+                name=f"Test {manufacturer_num}",
+                country=f"Test country {manufacturer_num}",
             )
 
     def test_retrieve_manufacturer(self):
@@ -52,8 +52,11 @@ class PrivateManufacturerTest(TestCase):
         self.assertTrue(response.context["is_paginated"] is True)
         self.assertTrue(len(response.context["manufacturer_list"]) == 2)
 
-    def test_lists_all_authors(self):
-        """The test checks the next page for correct display of pagination"""
+    def test_lists_all_manufacturers(self):
+
+        """The test checks the next page
+        for correct display of pagination"""
+
         for num in range(2, 4):
             response = self.client.get(MANUFACTURER_URL + f"?page={num}")
             self.assertEqual(response.status_code, 200)
