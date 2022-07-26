@@ -1,7 +1,9 @@
 body {
-    margin-top: 20px;
+    margin: 20px;
+    background-color: #f9f2ec;
 }
 
 .button {
     float: right;
 }
+

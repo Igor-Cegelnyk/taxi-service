@@ -27,21 +27,22 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-2 shadow p-3 bg-white text-dark">
 
             {% block sidebar %}
                 {% include "includes/sidebar.html" %}
             {% endblock %}
 
         </div>
-        <div class="col-sm-9 shadow p-3 mb-5 bg-white rounded">
+        <div class="col-10 shadow p-3 bg-white text-dark">
+            <div class="shadow p-3 bg-white text-dark">
 
             {% block content %}{% endblock %}
 
             {% block pagination %}
                 {% include "includes/pagination.html" %}
             {% endblock %}
-
+            </div>
         </div>
     </div>
 </div>

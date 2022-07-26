@@ -7,9 +7,11 @@
             Create
         </a>
     </h1>
+    <br>
 
     {% if manufacturer_list %}
       <table class="table">
+      <thead class="thead-dark">
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -17,16 +19,16 @@
           <th>Update</th>
           <th>Delete</th>
         </tr>
-
+      </thead>
         {% for manufacturer in manufacturer_list %}
             <tr>
-              <td>
+              <td class="font-weight-bolder">
                   {{ manufacturer.id }}
               </td>
-              <td>
+              <td class="font-weight-bolder">
                   {{ manufacturer.name }}
               </td>
-              <td>
+              <td class="font-weight-bolder">
                   {{ manufacturer.country }}
               </td>
               <td>
@@ -43,3 +45,4 @@
         <p>There are no manufacturers in the service.</p>
     {% endif %}
 {% endblock %}
+

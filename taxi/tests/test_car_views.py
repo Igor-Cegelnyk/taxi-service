@@ -80,12 +80,12 @@ class PrivateCarTest(TestCase):
             "model": "New car update",
             "manufacturer": manufacturer,
         }
-        new_car = Car.objects.get(id=2)
-        self.client.post(reverse(
-            "taxi:car-update", kwargs={"pk": new_car.id}),
-            deta=form_data
-        )
 
+        self.client.post(reverse(
+            "taxi:car-update", kwargs={"pk": 2}),
+            data=form_data
+        )
+        new_car = Car.objects.get(id=2)
         self.assertEqual(new_car.model, form_data["model"])
 
     def test_car_delete_views_request(self):
