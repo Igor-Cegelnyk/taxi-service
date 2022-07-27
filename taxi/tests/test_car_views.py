@@ -64,21 +64,23 @@ class PrivateCarTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_car_create_views(self):
-        manufacturer = Manufacturer.objects.get(id=1)
         form_data = {
             "model": "New car",
-            "manufacturer": manufacturer,
+            "manufacturer": "1",
+            "drivers": "1"
         }
         self.client.post(reverse("taxi:car-create"), data=form_data)
         new_car = Car.objects.get(model=form_data["model"])
+        cars = list(Car.objects.all())
 
+        self.assertEqual(len(cars), 7)
         self.assertEqual(new_car.model, form_data["model"])
 
     def test_car_update_views(self):
-        manufacturer = Manufacturer.objects.get(id=2)
         form_data = {
-            "model": "New car update",
-            "manufacturer": manufacturer,
+            "model": "New car",
+            "manufacturer": "2",
+            "drivers": "1"
         }
 
         self.client.post(reverse(
