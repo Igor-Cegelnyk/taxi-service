@@ -8,15 +8,21 @@ also is not limited to easy filling of its base.
 
 [Taxi-service project deployed to Heroku](PASTE_LINK_HERE)
 
+You can use an already created user to check the functionality of the site:
+```shell
+login: user
+password: user12345
+```
+
 ## Installation
 
-Python3 must be already installed
+Python must be already installed
 
 ```shell
 git clone https://github.com/Igor-Cegelnyk/taxi-service.git
 cd taxi-service/
 python3 -m venv venv
-source venv/bin/activate
+source venv/Scripts/activate
 pip install -r requirements.txt
 python manage.py ranserver  # starts Django Server
 ```
@@ -30,3 +36,4 @@ python manage.py ranserver  # starts Django Server
 ## Demo
 
 ![Website Interface](demo.png)
+![Website Interface](demo_car.png)

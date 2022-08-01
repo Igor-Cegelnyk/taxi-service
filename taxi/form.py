@@ -9,7 +9,7 @@ from taxi.models import Driver, Car
 class DriverCreationForm(UserCreationForm):
     license_number = forms.CharField(
         max_length=8,
-        required=True,
+        required=False,
         help_text="<li>License number must contain exactly 8 characters</li>"
                   "<li>First 3 characters are uppercase letters</li>"
                   "<li>Last 5 characters are digits</li>",
