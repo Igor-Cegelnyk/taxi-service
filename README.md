@@ -6,7 +6,7 @@ also is not limited to easy filling of its base.
 
 ## Check it out!
 
-[Taxi-service project deployed to Heroku](PASTE_LINK_HERE)
+[Taxi-service project deployed to Heroku](https://taxi-service-base.herokuapp.com/)
 
 You can use an already created user to check the functionality of the site:
 ```shell
