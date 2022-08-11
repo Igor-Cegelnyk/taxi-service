@@ -22,8 +22,9 @@ Python must be already installed
 git clone https://github.com/Igor-Cegelnyk/taxi-service.git
 cd taxi-service/
 python3 -m venv venv
-source venv/Scripts/activate
+source venv/Scripts/activate (on Windows) # source venv/bin/activate (on macOS)
 pip install -r requirements.txt
+python manage.py migrate
 python manage.py ranserver  # starts Django Server
 ```
 

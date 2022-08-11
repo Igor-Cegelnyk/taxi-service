@@ -2,12 +2,13 @@
     <ul class="sidebar-nav list-group">
       {% if user.is_authenticated %}
         <li class="list-group-item">
-            <strong>User:</strong>
-            <a href="{{ user.get_absolute_url }}" class="text-secondary font-weight-bolder">{{ user.get_username }}</a>
+            <strong>User: </strong>
+            <a href="{{ user.get_absolute_url }}" class="username"> {{ user.get_username }} </a>
+        <a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-outline-dark btm-sm button">Logout</a>
         </li>
-        <li class="list-group-item">
-            <a href="{% url 'logout'%}?next={{request.path}}" class="text-secondary font-weight-bolder">Logout</a>
-        </li>
+{#        <li class="list-group-item">#}
+
+{#        </li>#}
       {% else %}
         <li class="list-group-item">
             <a href="{% url 'login'%}?next={{request.path}}" class="text-secondary font-weight-bolder">Login</a>
@@ -16,17 +17,27 @@
 
       <br>
 
-      <li class="list-group-item">
-          <a href="{% url 'taxi:index' %}" class="text-secondary font-weight-bolder">Home</a>
-      </li>
-      <li class="list-group-item">
-          <a href="{% url 'taxi:driver-list' %}" class="text-secondary font-weight-bolder">Drivers</a>
-      </li>
-      <li class="list-group-item">
-          <a href="{% url 'taxi:car-list' %}" class="text-secondary font-weight-bolder">Cars</a>
-      </li>
-      <li class="list-group-item">
-          <a href="{% url 'taxi:manufacturer-list' %}" class="text-secondary font-weight-bolder">Manufacturers</a>
-      </li>
+      <div class="list-group">
+          <a href="{% url 'taxi:index' %}" class="btn btn-outline-dark"><strong>Home</strong></a>
+          <br>
+          <a href="{% url 'taxi:driver-list' %}" class="btn btn-outline-dark"><strong>Drivers</strong></a>
+          <br>
+          <a href="{% url 'taxi:car-list' %}" class="btn btn-outline-dark"><strong>Cars</strong></a>
+          <br>
+          <a href="{% url 'taxi:manufacturer-list' %}" class="btn btn-outline-dark"><strong>Manufacturers</strong></a>
+      </div>
+{#      <li class="list-group-item">#}
+{#          <a href="{% url 'taxi:index' %}" class="text-secondary font-weight-bolder">Home</a>#}
+{#      </li>#}
+{#      <li class="list-group-item">#}
+{#          <a href="{% url 'taxi:driver-list' %}" class="text-secondary font-weight-bolder">Drivers</a>#}
+{#      </li>#}
+{#      <li class="list-group-item">#}
+{#          <a href="{% url 'taxi:car-list' %}" class="text-secondary font-weight-bolder">Cars</a>#}
+{#      </li>#}
+{#      <li class="list-group-item">#}
+{#          <a href="{% url 'taxi:manufacturer-list' %}" class="text-secondary font-weight-bolder">Manufacturers</a>#}
+{#      </li>#}
     </ul>
 </div>
+
