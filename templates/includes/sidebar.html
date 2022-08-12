@@ -4,11 +4,8 @@
         <li class="list-group-item">
             <strong>User: </strong>
             <a href="{{ user.get_absolute_url }}" class="username"> {{ user.get_username }} </a>
-        <a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-outline-dark btm-sm button">Logout</a>
+        <a href="{% url 'logout'%}?next={{request.path}}" class="btn btn-outline-dark btm-sm logout">Logout</a>
         </li>
-{#        <li class="list-group-item">#}
-
-{#        </li>#}
       {% else %}
         <li class="list-group-item">
             <a href="{% url 'login'%}?next={{request.path}}" class="text-secondary font-weight-bolder">Login</a>
@@ -26,18 +23,6 @@
           <br>
           <a href="{% url 'taxi:manufacturer-list' %}" class="btn btn-outline-dark"><strong>Manufacturers</strong></a>
       </div>
-{#      <li class="list-group-item">#}
-{#          <a href="{% url 'taxi:index' %}" class="text-secondary font-weight-bolder">Home</a>#}
-{#      </li>#}
-{#      <li class="list-group-item">#}
-{#          <a href="{% url 'taxi:driver-list' %}" class="text-secondary font-weight-bolder">Drivers</a>#}
-{#      </li>#}
-{#      <li class="list-group-item">#}
-{#          <a href="{% url 'taxi:car-list' %}" class="text-secondary font-weight-bolder">Cars</a>#}
-{#      </li>#}
-{#      <li class="list-group-item">#}
-{#          <a href="{% url 'taxi:manufacturer-list' %}" class="text-secondary font-weight-bolder">Manufacturers</a>#}
-{#      </li>#}
     </ul>
 </div>
 
